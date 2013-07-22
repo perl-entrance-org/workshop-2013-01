@@ -109,8 +109,9 @@
 - MacでHomebrewを使っている方は, `brew`コマンドでインストールすることができます.
 
 ## plenvの導入(git)
-    $ git clone git://github.com/tokuhirom/plenv.git ~/.plenv
     $ sudo apt-get install git # gitのインストール(Ubuntu)
+    $ git clone git://github.com/tokuhirom/plenv.git ~/.plenv
+    $ git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build
 
 - Linux系OSをお使いの方はgitを使って導入します.
     - まず, このコマンドでplenvをダウンロードします.
@@ -122,6 +123,7 @@
 - plenvへのpathを通します.
     - `~/.bash_profile`はお使いのシェルに応じて適宜変更して下さい.
 - Ubuntuをお使いの方で, シェルを`bash`から変更していない方は`~/.bash_profile`のままで問題ありません.
+    - Ubuntuで`~/.bash_profile`に書き込んでも動作しない場合, `~/.bashrc`に書き込むと動く... という場合があります.
 
 ## plenvの導入
     $ source ~/.bash_profile
@@ -139,17 +141,17 @@
     - インストールにはそれなりの時間がかかりますので, 暫く待ちましょう.
 
 ## plenvでのperlの導入
-    $ plenv list
+    $ plenv versions
       5.16.3
     * system
 
-- 現在導入済みのperlの一覧を表示する`plenv list`コマンドで, `perl-5.16.3`の導入が成功したか確認してみましょう.
+- 現在導入済みのperlの一覧を表示する`plenv versions`コマンドで, `perl-5.16.3`の導入が成功したか確認してみましょう.
 - `system`はデフォルトで入っているperlです.
 - 先頭に`*`が付いているものが, 現在有効になっているperlです.
 
 ## plenvでのperlの導入
     $ plenv global 5.16.3
-    $ plenv list
+    $ plenv versions
     * 5.16.3
       system
 
@@ -206,6 +208,7 @@
     - スクリプトの名前は`profile.pl`として, 実行してみましょう.
 
 ## plenvとcpanm
+    $ sudo apt-get install curl # curlのインストール(Ubuntu)
     $ plenv install-cpanm
 
 - Perlには, CPANというアーカイブから様々なモジュールを利用することができます.
@@ -264,4 +267,7 @@
 ## 今後の予定
 - Perl入学式を通して, プログラミングの面白さ, Perlの面白さを実感して頂ければ, それに勝る喜びはありません.
 - これから1年間, どうぞ宜しくお願い致します.
+
+## 更新履歴
+- 2013/7/22: plenvのバージョンアップに対応
 
